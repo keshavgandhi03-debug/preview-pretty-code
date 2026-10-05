@@ -10,33 +10,206 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as FollowUpsRouteImport } from './routes/follow-ups'
+import { Route as LeadsRouteImport } from './routes/leads'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as PipelineRouteImport } from './routes/pipeline'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as TeamRouteImport } from './routes/team'
+import { Route as CampaignsIndexRouteImport } from './routes/campaigns.index'
+import { Route as CampaignsClientIdRouteImport } from './routes/campaigns.$clientId'
+import { Route as ResourcesIndexRouteImport } from './routes/resources.index'
+import { Route as ResourcesSlugRouteImport } from './routes/resources.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FollowUpsRoute = FollowUpsRouteImport.update({
+  id: '/follow-ups',
+  path: '/follow-ups',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeadsRoute = LeadsRouteImport.update({
+  id: '/leads',
+  path: '/leads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PipelineRoute = PipelineRouteImport.update({
+  id: '/pipeline',
+  path: '/pipeline',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CampaignsIndexRoute = CampaignsIndexRouteImport.update({
+  id: '/campaigns/',
+  path: '/campaigns/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CampaignsClientIdRoute = CampaignsClientIdRouteImport.update({
+  id: '/campaigns/$clientId',
+  path: '/campaigns/$clientId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesIndexRoute = ResourcesIndexRouteImport.update({
+  id: '/resources/',
+  path: '/resources/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesSlugRoute = ResourcesSlugRouteImport.update({
+  id: '/resources/$slug',
+  path: '/resources/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/follow-ups': typeof FollowUpsRoute
+  '/leads': typeof LeadsRoute
+  '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/pipeline': typeof PipelineRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
+  '/team': typeof TeamRoute
+  '/campaigns/$clientId': typeof CampaignsClientIdRoute
+  '/resources/$slug': typeof ResourcesSlugRoute
+  '/campaigns/': typeof CampaignsIndexRoute
+  '/resources/': typeof ResourcesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/follow-ups': typeof FollowUpsRoute
+  '/leads': typeof LeadsRoute
+  '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/pipeline': typeof PipelineRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
+  '/team': typeof TeamRoute
+  '/campaigns/$clientId': typeof CampaignsClientIdRoute
+  '/resources/$slug': typeof ResourcesSlugRoute
+  '/campaigns': typeof CampaignsIndexRoute
+  '/resources': typeof ResourcesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/follow-ups': typeof FollowUpsRoute
+  '/leads': typeof LeadsRoute
+  '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/pipeline': typeof PipelineRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
+  '/team': typeof TeamRoute
+  '/campaigns/$clientId': typeof CampaignsClientIdRoute
+  '/resources/$slug': typeof ResourcesSlugRoute
+  '/campaigns/': typeof CampaignsIndexRoute
+  '/resources/': typeof ResourcesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/follow-ups'
+    | '/leads'
+    | '/login'
+    | '/notifications'
+    | '/pipeline'
+    | '/reports'
+    | '/settings'
+    | '/team'
+    | '/campaigns/$clientId'
+    | '/resources/$slug'
+    | '/campaigns/'
+    | '/resources/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/admin'
+    | '/follow-ups'
+    | '/leads'
+    | '/login'
+    | '/notifications'
+    | '/pipeline'
+    | '/reports'
+    | '/settings'
+    | '/team'
+    | '/campaigns/$clientId'
+    | '/resources/$slug'
+    | '/campaigns'
+    | '/resources'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/follow-ups'
+    | '/leads'
+    | '/login'
+    | '/notifications'
+    | '/pipeline'
+    | '/reports'
+    | '/settings'
+    | '/team'
+    | '/campaigns/$clientId'
+    | '/resources/$slug'
+    | '/campaigns/'
+    | '/resources/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  FollowUpsRoute: typeof FollowUpsRoute
+  LeadsRoute: typeof LeadsRoute
+  LoginRoute: typeof LoginRoute
+  NotificationsRoute: typeof NotificationsRoute
+  PipelineRoute: typeof PipelineRoute
+  ReportsRoute: typeof ReportsRoute
+  SettingsRoute: typeof SettingsRoute
+  TeamRoute: typeof TeamRoute
+  CampaignsClientIdRoute: typeof CampaignsClientIdRoute
+  ResourcesSlugRoute: typeof ResourcesSlugRoute
+  CampaignsIndexRoute: typeof CampaignsIndexRoute
+  ResourcesIndexRoute: typeof ResourcesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,18 +221,122 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/follow-ups': {
+      id: '/follow-ups'
+      path: '/follow-ups'
+      fullPath: '/follow-ups'
+      preLoaderRoute: typeof FollowUpsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leads': {
+      id: '/leads'
+      path: '/leads'
+      fullPath: '/leads'
+      preLoaderRoute: typeof LeadsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pipeline': {
+      id: '/pipeline'
+      path: '/pipeline'
+      fullPath: '/pipeline'
+      preLoaderRoute: typeof PipelineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campaigns/': {
+      id: '/campaigns/'
+      path: '/campaigns'
+      fullPath: '/campaigns/'
+      preLoaderRoute: typeof CampaignsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campaigns/$clientId': {
+      id: '/campaigns/$clientId'
+      path: '/campaigns/$clientId'
+      fullPath: '/campaigns/$clientId'
+      preLoaderRoute: typeof CampaignsClientIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/': {
+      id: '/resources/'
+      path: '/resources'
+      fullPath: '/resources/'
+      preLoaderRoute: typeof ResourcesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/$slug': {
+      id: '/resources/$slug'
+      path: '/resources/$slug'
+      fullPath: '/resources/$slug'
+      preLoaderRoute: typeof ResourcesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  FollowUpsRoute: FollowUpsRoute,
+  LeadsRoute: LeadsRoute,
+  LoginRoute: LoginRoute,
+  NotificationsRoute: NotificationsRoute,
+  PipelineRoute: PipelineRoute,
+  ReportsRoute: ReportsRoute,
+  SettingsRoute: SettingsRoute,
+  TeamRoute: TeamRoute,
+  CampaignsClientIdRoute: CampaignsClientIdRoute,
+  ResourcesSlugRoute: ResourcesSlugRoute,
+  CampaignsIndexRoute: CampaignsIndexRoute,
+  ResourcesIndexRoute: ResourcesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
 
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
+import type { getRouter } from './router.jsx'
+import type { startInstance } from './start.js'
 declare module '@tanstack/react-start' {
   interface Register {
     ssr: true
