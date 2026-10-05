@@ -8,7 +8,11 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
+    // TanStack Start's generated registration footer is TypeScript-only.
+    // Authored application files remain JavaScript; this generated artifact
+    // is imported explicitly so no stale JavaScript copy can shadow it.
+    router: { generatedRouteTree: "routeTree.gen.ts" },
+    // Redirect TanStack Start's bundled server entry to src/server.js (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
   },
